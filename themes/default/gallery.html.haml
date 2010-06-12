@@ -74,7 +74,7 @@
   
   
 -content_for :subnav do
-  %li{ :class => 'last', :style => 'padding-left: 0' } Select a Gallery: 
+  %li{ :class => 'last', :style => 'padding-left: 0' } Выберите альбом: 
   - @galleries.each_with_index do |gallery, i|
     %li{ :class => "#{'last' if (i + 1) == @galleries.size}" }
       = link_to(h(gallery.title), gallery_path(gallery), :title => h(gallery.title), :class => "#{'active' if @gallery.id == gallery.id}")
@@ -83,9 +83,9 @@
   #main
     .gallery_container
     %p.gallery_nav
-      %a{ :href => '#', :onclick => "$.galleria.prev(); resetSlideshow(); return false;", :title => 'Previous Photo' } &laquo; prev
+      %a{ :href => '#', :onclick => "$.galleria.prev(); resetSlideshow(); return false;", :title => 'Previous Photo' } &laquo; Предыдущая
       |
-      %a{ :href => '#', :onclick => "$.galleria.next(); resetSlideshow(); return false;", :title => 'Next Photo' } next &raquo;
+      %a{ :href => '#', :onclick => "$.galleria.next(); resetSlideshow(); return false;", :title => 'Next Photo' } Следующая &raquo;
     %p= h(@gallery.description)
   #sidebar
     %h2

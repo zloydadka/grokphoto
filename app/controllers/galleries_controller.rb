@@ -1,6 +1,8 @@
 class GalleriesController < HomeController
+ 
   inherit_resources
-  actions :index, :show
+  
+  actions :index, :show, :tag_cloud
   respond_to :html, :xml
   
   caches_page :show
@@ -27,7 +29,10 @@ class GalleriesController < HomeController
       return
     end
   end
-  
+  def tag_cloud
+        @tags = Gallery.tag_counts_on(:tags)
+        render :text => "#{@tags}"
+  end
   private #-------
     # Defining the collection explicitly for ordering
     def collection

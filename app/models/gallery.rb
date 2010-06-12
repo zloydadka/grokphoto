@@ -1,7 +1,7 @@
 class Gallery < ActiveRecord::Base
   belongs_to :photographer
   acts_as_list :scope => :photographer_id
-  
+  acts_as_taggable
   has_many :gallery_photos, :dependent => :destroy, :order => 'position'
   
   validates_presence_of :title, :description
@@ -23,7 +23,7 @@ class Gallery < ActiveRecord::Base
   
   has_friendly_id :title, :use_slug => true
   
-  after_save :clear_cache
+  after_save :clear_cache, :write_tags
   
   def clear_cache
     # clear the home page
@@ -37,4 +37,7 @@ class Gallery < ActiveRecord::Base
     File.delete("#{Rails.root}/public/sitemap.html") if File.exists?("#{Rails.root}/public/sitemap.html")
   end
   
+  def write_tags
+    self.tag_list = keywords
+  end
 end
