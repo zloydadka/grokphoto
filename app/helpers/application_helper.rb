@@ -1,7 +1,8 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   include ActsAsTaggableOn::TagsHelper
-  
+  def tags
+  end
   def display_flash   
     html = ''
     # if we get double flash messages, remove one of them. For some reason inherited resources decided to add a new flash message.

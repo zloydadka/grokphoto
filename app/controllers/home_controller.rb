@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   layout 'layout' #kind of a cheat so we don't need to use a layouts directory in the themes folders
+  
   skip_before_filter :config, :only => :config_error
   before_filter :prepend_theme, :except => :config_error # applies a theme
   before_filter :load_pages

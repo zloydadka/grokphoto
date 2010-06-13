@@ -29,9 +29,12 @@ class GalleriesController < HomeController
       return
     end
   end
-  def tag_cloud
-        @tags = Gallery.tag_counts_on(:tags)
-        render :text => "#{@tags}"
+  
+  def tags
+    tag! do
+      render :text => 111
+      return
+    end
   end
   private #-------
     # Defining the collection explicitly for ordering
