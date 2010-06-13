@@ -17,6 +17,5 @@
 
 %p.clearfix
 %div
-  - tag_cloud(Gallery.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class|
-    = link_to(tag.name, tag_tag_url, :class => css_class)
-    = tag.attributes
+  - for tag in @tags
+    = link_to(tag.name, tags_path({:tag => tag.id}))

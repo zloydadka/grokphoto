@@ -23,7 +23,8 @@ class Gallery < ActiveRecord::Base
   
   has_friendly_id :title, :use_slug => true
   
-  after_save :clear_cache, :write_tags
+  after_save :clear_cache
+  before_save :write_tags
   
   def clear_cache
     # clear the home page

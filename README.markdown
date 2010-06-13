@@ -35,6 +35,8 @@ Installation script coming soon! Follow these instructions for now:
 
     $ git clone git://github.com/rapind/grokphoto.git
     $ cd grokphoto
+	$ git submodules init
+	$ git submodules update
     $ cp config/database.yml.sample config.database.yml
     $ cp config/initializers/grokphoto.rb.sample config/initializers/grokphoto.rb
     $ cp config/deploy.rb.sample deploy.rb
@@ -43,6 +45,7 @@ Then edit these three files with your own settings. Everything you need to chang
 
     $ sudo gem install less  
     $ sudo rake gems:install
+    $ script/generate acts_as_taggable_on_migration
     $ rake db:create
     $ rake db:migrate
     $ rake db:seed

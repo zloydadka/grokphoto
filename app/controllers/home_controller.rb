@@ -15,6 +15,8 @@ class HomeController < ApplicationController
   def index
     @page_title = @config.home_page_title ||= 'Photographer'
     @galleries = @config.galleries.find :all
+    @tags = Gallery.tag_counts_on(:tags)
+    
     render :template => '/home'
   end
   
@@ -40,6 +42,8 @@ class HomeController < ApplicationController
     end
     
     def load_pages
+      @tags = Gallery.tag_counts_on(:tags)
+      
       @pages = Page.find :all, :order => 'position'
       @quotes = Quote.find :all, :order => 'position'
     end
