@@ -89,9 +89,9 @@
     %p= h(@gallery.description)
   #sidebar
     %h2
-      = "#{h(@gallery.title)} Photos"
+      = "#{h(@gallery.title)}"
     %p
-      Jump to a photo:
+      Перейти к фото:
     %ul.gallery_thumbs
       - @gallery.gallery_photos.each_with_index do |photo, i|
         %li{ :class => "#{'active' if i == 0}" }

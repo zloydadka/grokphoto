@@ -643,3 +643,15 @@ ul.image_list li a.delete-no-conf img {
   margin: 0;
   border: none;
 }
+#tags {
+  border: solid 1px #aaaaaa;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+#tags a {
+  font-size: 150%;
+  margin: 0 0.5em;
+  color: black;
+  text-decoration: none;
+}
+#tags a:hover { color: #ff9000; }

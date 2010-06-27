@@ -1,11 +1,11 @@
-%h3 Contact Info
+%h3 Контактная информация
 %p 
   = enkode_mail( @config.company_email, @config.company_email, "Email Me", "#{@config.company_name} - Request" )
   = "<br /><br />#{@config.company_phone}<br />" unless @config.company_phone.blank?
-  = "<br />#{link_to 'Blog', @config.blog_url}" unless @config.blog_url.blank?
-  = "| #{link_to('Facebook', @config.facebook_url, :title => 'My Facebook Page')}" unless @config.facebook_url.blank?
-  = "| #{link_to('Twitter', @config.twitter_url, :title => 'Follow me on Twitter')}" unless @config.twitter_url.blank?
-%h3 Client Testimonials
+  = "<br />#{link_to 'Блог', @config.blog_url}" unless @config.blog_url.blank?
+  = "| #{link_to('Facebook', @config.facebook_url, :title => 'Facebook')}" unless @config.facebook_url.blank?
+  = "| #{link_to('Twitter', @config.twitter_url, :title => 'Twitter')}" unless @config.twitter_url.blank?
+%h3 Отзывы клиентов
 - for quote in @quotes
   %p
     %i= "\"#{h(quote.body)}\""

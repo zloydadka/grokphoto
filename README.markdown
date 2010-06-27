@@ -115,6 +115,7 @@ Credits
 * [http://github.com/rtomayko/rdiscount](http://github.com/rtomayko/rdiscount)
 * [http://devkick.com/lab/galleria/](http://devkick.com/lab/galleria/)
 * [http://www.progressivered.com/cu3er/](http://www.progressivered.com/cu3er/)
+* [http://github.com/mbleigh/acts-as-taggable-on](http://github.com/mbleigh/acts-as-taggable-on)
 * Sample photos were provided by and are copyright of Jaime Coyle Photography [http://jaimecoyle.com](http://jaimecoyle.com)
 
 
