@@ -5,7 +5,7 @@ Grokphoto is a professional photographer's client and booking management solutio
 
 ### [Watch the Video](http://grokphoto.org/introduction.html) ###
 
-There's a live demo available at:
+There's a live demo available at: 
 
 * [http://www.grokphoto.org](http://www.grokphoto.org)
 
