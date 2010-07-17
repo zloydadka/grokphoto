@@ -6,11 +6,12 @@ class Photo < ActiveRecord::Base
   # I wrote a custom processor for watermarking with ImageMagick which is called after the thumbnail processor.
   # The watermark image itself is uploaded on the settings page, so we need to retrieve it's path and pass it in.
   has_attached_file :image,
-                    #:processors => [:thumbnail, :watermark],
+                    :processors => [:thumbnail, :watermark],
                     :styles => { 
+                      :big => "1024x768#",
                       :large => "640x480>", #{ :geometry => "640x480>", :watermark_path => Proc.new{ self.watermark_path } },
                       :thumb => "" },
-                    :default_style => :large,
+                    :default_style => :big,
                     :path => ":rails_root/public/attachments/bookings/:booking_id/photos/:id/:style/:basename.:extension",
                     :url => "/attachments/bookings/:booking_id/photos/:id/:style/:basename.:extension",
                     :convert_options => {
