@@ -34,6 +34,6 @@
       = render :partial => '/header'
       - if @content_for_subnav
         #subnav
-          %ul= yield(:subnav)
+          %ul= yield(:subnav) 
       = yield
       = render :partial => '/footer'
