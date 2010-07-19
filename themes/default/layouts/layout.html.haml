@@ -30,6 +30,8 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
   %body
+    = image_tag("bg-left.png", :id => "bgLeft")
+    = image_tag("bg-right.png", :id => "bgRight")
     #container
       = render :partial => '/header'
       - if @content_for_subnav

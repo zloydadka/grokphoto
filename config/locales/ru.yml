@@ -1,0 +1,10 @@
+ru:
+    photos: "Фотографии"
+    authorization: "Авторизация"
+    client: "Клиент"
+    client_login: "Вход для клиентов"
+    blog: "Блог"
+    gallery: "Галерея"
+    all_rights_reserved: "Все права защищены"
+    select_album: "Выберите альбом"
+    forget_password: "Забыли пароль?"

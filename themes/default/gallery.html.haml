@@ -25,6 +25,10 @@
   }
   });
   $(document).ready(function () {
+  $('#slides').cycle({
+  timeout: 3000,
+  speed: 3000
+  });
   style = 'easeOutQuart';
   $('.photo').hover(
   function() {
@@ -40,7 +44,8 @@
 
 
 -content_for :subnav do
-  %li{ :class => 'last', :style => 'padding-left: 0' } Выберите альбом: 
+  %li{ :class => 'last', :style => 'padding-left: 0' } 
+    = t(:select_album)+":"
   - @galleries.each_with_index do |gallery, i|
     %li{ :class => "#{'last' if (i + 1) == @galleries.size}" }
       = link_to(h(gallery.title), gallery_path(gallery), :title => h(gallery.title), :class => "#{'active' if @gallery.id == gallery.id}")

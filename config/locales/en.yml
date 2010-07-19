@@ -2,4 +2,11 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  authorization: "Login"
+  client: "Client"
+  client_login: "Client login"
+  blog: "Blog"
+  gallery: "Gallery"    
+  all_rights_reserved: "All Rights Reserved"    
+  select_album: "Select album"    
+  forget_password: "Did you forget your password?"

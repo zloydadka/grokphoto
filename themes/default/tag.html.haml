@@ -1,3 +1,4 @@
-%li{ :class => 'last', :style => 'padding-left: 0' } Выберите альбом: 
+%li{ :class => 'last', :style => 'padding-left: 0' }
+  = t(:select_album) + ":"
 %ul{ :id => 'position_container', :class => 'image_list' }
   = render :partial => "/row", :collection => @galleries

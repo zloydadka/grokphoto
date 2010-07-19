@@ -4,7 +4,7 @@
     %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
     %meta{ :content => "chrome=1", "http-equiv" => "X-UA-Compatible" }
     %title
-      = "#{controller.controller_name.humanize.titleize} - Client - #{@config.company_name}"
+      = "#{controller.controller_name.humanize.titleize} - #{t(:client)} - #{@config.company_name}"
     = stylesheet_link_tag('admin.css', :media => 'screen, projection')
     = stylesheet_link_tag('global/print.css', :media => 'print')
     /[if lt IE 8]
@@ -18,7 +18,7 @@
         #logo{ :style => 'width: 670px' }
           %h1
             = @config.company_name
-            = " | #{current_client ? current_client.name : 'Login'}"
+            = " | #{current_client ? current_client.name : t(:authorization)}"
         #nav{ :style => 'width: 290px' }
           %ul.tabs
             - if current_client

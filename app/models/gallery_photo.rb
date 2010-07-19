@@ -8,7 +8,7 @@ class GalleryPhoto < ActiveRecord::Base
                     :url => "/attachments/galleries/:gallery_id/gallery_photos/:id/:style/:basename.:extension",
                     :convert_options => {
                       :original => "-gravity center -thumbnail 660x440^ -extent 660x440",
-                      :thumb => "-gravity center -thumbnail 150x100^ -extent 150x100"
+                      :thumb => "-gravity center -thumbnail 80x80^ -extent 80x80"
                     }
   
   validates_attachment_presence :image

@@ -10,12 +10,12 @@ class Photo < ActiveRecord::Base
                     :styles => { 
                       :big => "1024x768#",
                       :large => "640x480>", #{ :geometry => "640x480>", :watermark_path => Proc.new{ self.watermark_path } },
-                      :thumb => "" },
+                      :thumb => "80x80" },
                     :default_style => :big,
                     :path => ":rails_root/public/attachments/bookings/:booking_id/photos/:id/:style/:basename.:extension",
                     :url => "/attachments/bookings/:booking_id/photos/:id/:style/:basename.:extension",
                     :convert_options => {
-                      :thumb => "-gravity center -thumbnail 150x100^ -extent 150x100"
+                      :thumb => "-gravity center -thumbnail 80x80^ -extent 80x80"
                     }
   
   validates_attachment_presence :image
