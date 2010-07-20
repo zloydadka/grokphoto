@@ -5,28 +5,15 @@
 @import "plugins/_buttons.css";
 
 /* COLORS */
-@background-color: #101A2F;
+@background-color: #8c8c8c;
 @text-color: #fff;
 @link-color: #2C85B7;
 @hover-color: #FF9000;
 @border-color: #fff;
-#bgLeft
-{
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  z-index: -1;
-}
 
-#bgRight
-{
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  z-index: -1;
-}
 
 body {
+	background-image: url("/images/bg.jpg");
 	background-color: @background-color;
 	color: @text-color;
 }
@@ -86,6 +73,7 @@ a:hover {
 	padding: 0;
 	a {
 		text-decoration: none;
+		color: @link-color;
 	}
 	a.active {
 		color: #e57011;
@@ -308,17 +296,18 @@ ul.image_list {
 	margin-bottom: 1em;
 	padding: 1em;
 	background: #5BB4E5;
-}
-	#tags a{
+	a {
 		font-size: 150%;
 		margin: 0 0.5em;
 		color: #fff;
-		text-decoration: none;
+		text-decoration: none;	
 	}
-	
-	#tags a:hover {
+	a:hover {
 		color: #2C85B7;
 	}
+}
+
+	
 	
 	.photo {
 		position: relative; display:block;width:80px;height:80px;overflow:hidden;float:left;margin:0 11px 16px 0;border:5px solid @border-color;

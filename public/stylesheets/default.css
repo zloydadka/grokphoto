@@ -350,7 +350,8 @@ a.negative:active {
   z-index: -1;
 }
 body {
-  background-color: #101a2f;
+  background-image: url("/images/bg.jpg");
+  background-color: #8c8c8c;
   color: #ffffff;
 }
 a { color: #2c85b7; }
@@ -398,7 +399,10 @@ a:hover { color: #ff9000; }
   float: left;
   padding: 0;
 }
-#header ul a { text-decoration: none; }
+#header ul a {
+  text-decoration: none;
+  color: #2c85b7;
+}
 #header ul a.active {
   color: #e57011;
   border-bottom: 1px dotted #ffffff;
@@ -407,7 +411,10 @@ a:hover { color: #ff9000; }
   float: left;
   padding: 0;
 }
-#subnav ul a { text-decoration: none; }
+#subnav ul a {
+  text-decoration: none;
+  color: #2c85b7;
+}
 #subnav ul a.active {
   color: #e57011;
   border-bottom: 1px dotted #ffffff;
