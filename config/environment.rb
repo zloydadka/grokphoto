@@ -7,6 +7,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
   # required gems (rake gems:install)
+  config.gem 'russian'
   config.gem 'rdiscount', :version => "= 1.5.8"
   config.gem 'mime-types', :lib => 'mime/types', :version => "= 1.16"
   config.gem 'acts_as_list', :version => "= 0.1.2"

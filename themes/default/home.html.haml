@@ -10,7 +10,7 @@
   #slides
     - for gallery in @galleries
       %div
-        = link_to(image_tag(gallery.image.url, :size => '960x540', :alt => h(gallery.title), :title => h(gallery.title)), gallery_path(gallery), :id => gallery.id)
+        = link_to(image_tag(gallery.image.url(:in_gallery), :size => '960x540', :alt => h(gallery.title), :title => h(gallery.title)), gallery_path(gallery), :id => gallery.id)
         %div{ :id => "description_#{gallery.id}", :class => 'slide_description' }
           %h2= h(gallery.title)
           = h(gallery.description)

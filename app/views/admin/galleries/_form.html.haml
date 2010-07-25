@@ -11,10 +11,10 @@
 = f.error_messages
 %div{ :style => "width:50%; float:left;" }
   %p
-    = f.label :title
+    = f.label :title, "Название"
     = f.text_field :title, :class => 'text validate[required,length[2,100]]'
   %p
-    = f.label :image, "Upload Gallery Image (Should be 275x200 pixels)"
+    = f.label :image, "Обложка (Должна быть 275x200 px)"
     = f.file_field :image, :class => 'text'
   
 %div{ :style => "width:50%; float:left;" }
@@ -23,11 +23,14 @@
     
 %div{ :style => "width:100%; float:left;" }
   %p
-    = f.label :keywords
+    = f.label :keywords, "Ключевые слова"
     = f.text_field :keywords, :class => 'text long validate[optional,length[3,200]]'
   %p
-    = f.label :description
+    = f.label :description, "Описание"
     = f.text_area :description, :class => 'brief validate[required,length[5,1000]]'
+  %p
+    = f.label :gallery_id, "Родительская галлерея"
+    = f.select :gallery_id, Gallery.all.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Нет'}
 
   = render :partial => "admin/shared/buttons"
 

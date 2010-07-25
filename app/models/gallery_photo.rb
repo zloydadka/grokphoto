@@ -7,7 +7,7 @@ class GalleryPhoto < ActiveRecord::Base
                     :path => ":rails_root/public/attachments/galleries/:gallery_id/gallery_photos/:id/:style/:basename.:extension",
                     :url => "/attachments/galleries/:gallery_id/gallery_photos/:id/:style/:basename.:extension",
                     :convert_options => {
-                      :original => "-gravity center -thumbnail 660x440^ -extent 660x440",
+                      :original => "-resize 660x440",
                       :thumb => "-gravity center -thumbnail 150x100^ -extent 150x100"
                     }
   

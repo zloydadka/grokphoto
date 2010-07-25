@@ -1,9 +1,13 @@
 class Gallery < ActiveRecord::Base
   belongs_to :photographer
   acts_as_list :scope => :photographer_id
-  
+
+  has_many :galleries, :class_name => "Gallery", :foreign_key => "gallery_id"
+  belongs_to :parent, :class_name => "Gallery", :foreign_key => "gallery_id"
+
+  named_scope :categories, :conditions => 'gallery_id is null'
+    
   has_many :gallery_photos, :dependent => :destroy, :order => 'position'
-  
   validates_presence_of :title, :description
   validates_uniqueness_of :title
   validates_length_of :title, :within => 2..100
@@ -11,11 +15,12 @@ class Gallery < ActiveRecord::Base
   validates_length_of :keywords, :within => 3..200, :allow_blank => true
   
   has_attached_file :image,
-                    :styles => { :original => "", :thumb => "" },
+                    :styles => {:in_gallery => "", :original => "", :thumb => "" },
                     :path => ":rails_root/public/attachments/galleries/:id/:style/:basename.:extension",
                     :url => "/attachments/galleries/:id/:style/:basename.:extension",
                     :convert_options => {
-                      :original => "-gravity center -thumbnail 960x540^ -extent 960x540",
+                      :in_gallery => "-gravity center -thumbnail 960x540^ -extent 960x540",
+                      :original => "-resize 660x440",
                       :thumb => "-gravity center -thumbnail 150x100^ -extent 150x100"
                     }
   
