@@ -1,5 +1,4 @@
 class GalleriesController < HomeController
- include ActsAsTaggableOn
   inherit_resources
   
   actions :index, :show, :tags
