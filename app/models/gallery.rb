@@ -29,7 +29,6 @@ class Gallery < ActiveRecord::Base
   has_friendly_id :title, :use_slug => true
   
   after_save :clear_cache
-  before_save :write_tags
   
   def clear_cache
     # clear the home page
@@ -43,7 +42,5 @@ class Gallery < ActiveRecord::Base
     File.delete("#{Rails.root}/public/sitemap.html") if File.exists?("#{Rails.root}/public/sitemap.html")
   end
   
-  def write_tags
-    self.tag_list = keywords
-  end
+
 end
