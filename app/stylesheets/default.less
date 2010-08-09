@@ -200,8 +200,9 @@ label {
 		margin: 0;
 	}
 }
-.highslide-gallery {list-style:none;width:100%;padding:16px;}
-.highslide-gallery a{}
+.gallery_thumbs{list-style:none;width:212px;padding:0;}
+.gallery_thumbs li{display:block;width:40px;height:40px;overflow:hidden;float:left;margin:0 8px 8px 0;border:2px solid @border-color;}
+.gallery_thumbs li a{display:none}
 .gallery_thumbs li div{position:absolute;display:none;top:0;left:200px}
 .gallery_thumbs li div img{cursor:pointer}
 .gallery_thumbs li.active div img,.galleria li.active div{display:block}
@@ -227,119 +228,3 @@ label {
 .css2 { font-size: 1.2em; }
 .css3 { font-size: 1.4em; }
 .css4 { font-size: 1.6em; }
-
-ul.image_list {
-	position: relative;
-  padding: 0;
-  margin: 0;
-	li {
-	  float: left;
-	  list-style: none;
-	  margin: 0px 5px 15px 5px;
-	  border: 1px solid #bbbbbb;
-	  text-align: center;
-	  width: 158px;
-	  height: 146px;
-		position:relative;
-		div {
-		  width: 152px;
-		  background-color: #eeeeee;
-			margin-top: 2px;
-			margin-left: 3px;
-		}
-		div.expired {
-			background-color: #cc0000;
-			position: absolute;
-			top: 22px;
-			color: #fff;
-			filter:alpha(opacity=70);
-			-moz-opacity: 0.7;
-			opacity: 0.7;
-			font-weight: bold;
-			font-size: 1.4em;
-			margin: 0;
-		}
-		div.actions {
-			background-color: #aaa;
-			position: absolute;
-			top: 125px;
-			color: #fff;
-			filter:alpha(opacity=90);
-			-moz-opacity: 0.9;
-			opacity: 0.9;
-			font-weight: bold;
-			font-size: 1em;
-			margin: 0px 3px;
-			height: 18px;
-			a {
-				color: #fff;
-			}
-		}
-		img {
-		  margin-top: 2px;
-		  border: 1px solid #cccccc;
-		}
-		a.delete, a.delete-no-conf {
-			img {
-				position: absolute;
-				top: 2px;
-				right: 3px;
-				margin: 0;
-				border: none;
-			}
-		}
-	}
-}
-
-#tags {
-	border: solid 3px #159DDC;
-	margin-bottom: 1em;
-	padding: 1em;
-	background: #5BB4E5;
-	a {
-		font-size: 150%;
-		margin: 0 0.5em;
-		color: #fff;
-		text-decoration: none;	
-	}
-	a:hover {
-		color: #2C85B7;
-	}
-}
-
-	
-	
-	.photo {
-		position: relative; display:block;width:80px;height:80px;overflow:hidden;float:left;margin:0 11px 16px 0;border:5px solid @border-color;
-	}
-	.photo .heading, .photo .caption {
-				position:absolute;
-				background:#000;
-				height:30px;
-				width:150px;
-				opacity:0.6;
-			}
-
-			.photo .heading { 
-				top:-100px;
-			}
-
-			.photo .caption { 		
-				bottom:-50px;		
-				left:0px;
-			}
-
-			.photo .heading span {
-				color:#26c3e5;	
-				top:-50px;
-				font-weight:bold;
-				display:block;
-				padding:5px 0 0 10px;
-			}
-
-			.photo .caption span{
-				color:#999;	
-				font-size:9px;
-				display:block;
-				padding:5px 10px 0 10px;
-			}

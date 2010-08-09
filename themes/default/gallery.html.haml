@@ -74,28 +74,15 @@
   function stopSlideshow() {
     clearInterval ( intervalId );
   }
-  });
-  $(document).ready(function () {
-  $('#slides').cycle({
-  timeout: 3000,
-  speed: 3000
-  });
-  style = 'easeOutQuart';
-  $('.photo').hover(
-  function() {
-  $(this).children('div:first').stop(false,true).animate({top:0},{duration:200, easing: style});
-  $(this).children('div:last').stop(false,true).animate({bottom:0},{duration:200, easing: style});
-  },
-  function() {
-  $(this).children('div:first').stop(false,true).animate({top:-50},{duration:200, easing: style});
-  $(this).children('div:last').stop(false,true).animate({bottom:-50},{duration:200, easing: style});
+  // just resets the interval so we're not moving too fast when the next / prev links are used.
+  function resetSlideshow() {
+    stopSlideshow();
+    startSlideshow();
   }
-  );
-  });
-
-
+  
+  
 -content_for :subnav do
-  %li{ :class => 'last', :style => 'padding-left: 0' } Выберите галерею: 
+  %li{ :class => 'last', :style => 'padding-left: 0' } Select a Gallery: 
   - @galleries.each_with_index do |gallery, i|
     %li{ :class => "#{'last' if (i + 1) == @galleries.size}" }
       = link_to(h(gallery.title), gallery_path(gallery), :title => h(gallery.title), :class => "#{'active' if @gallery.id == gallery.id}")
@@ -117,12 +104,12 @@
       %ul.gallery_thumbs
         - @gallery.gallery_photos.each_with_index do |photo, i|
           %li{ :class => "#{'active' if i == 0}" }
-            = image_tag(photo.image.url, :alt => h(photo.title))
+            = image_tag(photo.image.url(:thumb), :alt => h(photo.title))
     - unless @gallery.galleries.empty? then
       %h2 
         Альбомы
       %ul.gallery_thumbs
         - @gallery.galleries.each_with_index do |g, i|
           %li{ :class => "#{'active' if i == 0}" }
-            = image_tag(g.image.url, :alt => h(g.title), :gallery_id => g.id)
+            = image_tag(g.image.url(:thumb), :alt => h(g.title), :gallery_id => g.id)
     %p.clearfix

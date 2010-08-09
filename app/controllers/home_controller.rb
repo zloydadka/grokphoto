@@ -39,9 +39,7 @@ class HomeController < ApplicationController
       self.prepend_view_path(config.theme_path)
     end
     
-    def load_pages
-      @tags = Gallery.tag_counts_on(:tags)
-      
+    def load_pages      
       @pages = Page.find :all, :order => 'position'
       @quotes = Quote.find :all, :order => 'position'
     end
