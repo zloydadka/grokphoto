@@ -10,7 +10,7 @@ class GalleriesController < HomeController
   def index
     index! do |format|
       format.html do
-        redirect_to gallery_path(@config.galleries.first)
+        redirect_to gallery_path(@config.galleries.categories.first)
         return
       end
       format.xml { render :template => '/galleries', :layout => false }
@@ -22,7 +22,7 @@ class GalleriesController < HomeController
       @page_title = "#{@gallery.title} Gallery"
       @page_keywords = @gallery.keywords.blank? ? "#{@gallery.title.downcase}, gallery, photography, portraits, professional" : @gallery.keywords
       @page_description = @gallery.description
-      @galleries = @config.galleries.find :all
+      @galleries = @config.galleries.categories
       render :template => '/gallery'
       return
     end
@@ -31,7 +31,7 @@ class GalleriesController < HomeController
   private #-------
     # Defining the collection explicitly for ordering
     def collection
-      @galleries ||= @config.galleries.find :all
+      @galleries ||= @config.galleries.categories
     end
   
 end
