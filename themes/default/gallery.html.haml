@@ -104,12 +104,12 @@
       %ul.gallery_thumbs
         - @gallery.gallery_photos.each_with_index do |photo, i|
           %li{ :class => "#{'active' if i == 0}" }
-            = image_tag(photo.image.url(:thumb), :alt => h(photo.title))
+            = image_tag(photo.image.url, :alt => h(photo.title))
     - unless @gallery.galleries.empty? then
       %h2 
         Альбомы
       %ul.gallery_thumbs
         - @gallery.galleries.each_with_index do |g, i|
           %li{ :class => "#{'active' if i == 0}" }
-            = image_tag(g.image.url(:thumb), :alt => h(g.title), :gallery_id => g.id)
+            = image_tag(g.image.url, :alt => h(g.title), :gallery_id => g.id)
     %p.clearfix
