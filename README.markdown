@@ -5,7 +5,7 @@ Grokphoto is a professional photographer's client and booking management solutio
 
 ### [Watch the Video](http://grokphoto.org/introduction.html) ###
 
-There's a live demo available at:
+There's a live demo available at: 
 
 * [http://www.grokphoto.org](http://www.grokphoto.org)
 
@@ -35,6 +35,8 @@ Installation script coming soon! Follow these instructions for now:
 
     $ git clone git://github.com/rapind/grokphoto.git
     $ cd grokphoto
+	$ git submodules init
+	$ git submodules update
     $ cp config/database.yml.sample config.database.yml
     $ cp config/initializers/grokphoto.rb.sample config/initializers/grokphoto.rb
     $ cp config/deploy.rb.sample deploy.rb
@@ -43,6 +45,7 @@ Then edit these three files with your own settings. Everything you need to chang
 
     $ sudo gem install less  
     $ sudo rake gems:install
+    $ script/generate acts_as_taggable_on_migration
     $ rake db:create
     $ rake db:migrate
     $ rake db:seed
@@ -112,6 +115,7 @@ Credits
 * [http://github.com/rtomayko/rdiscount](http://github.com/rtomayko/rdiscount)
 * [http://devkick.com/lab/galleria/](http://devkick.com/lab/galleria/)
 * [http://www.progressivered.com/cu3er/](http://www.progressivered.com/cu3er/)
+* [http://github.com/mbleigh/acts-as-taggable-on](http://github.com/mbleigh/acts-as-taggable-on)
 * Sample photos were provided by and are copyright of Jaime Coyle Photography [http://jaimecoyle.com](http://jaimecoyle.com)
 
 

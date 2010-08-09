@@ -1,11 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
   # root
+  map.tags "/tags",  :controller => "galleries", :action => "tags" #, :id => params[:id]
+  
   map.root :controller => 'home'
   map.config_error '/config_error', :controller => 'home', :action => 'config_error'
   map.not_found '/not_found', :controller => 'home', :action => 'not_found'
   map.timestamp '/timestamp', :controller => 'home', :action => 'timestamp'
-  
   # sitemap
+  map.resources :tags
+   
   map.resources :sitemap
   
   # galleries

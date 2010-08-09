@@ -1,10 +1,18 @@
 class GalleriesController < HomeController
+ include ActsAsTaggableOn
   inherit_resources
-  actions :index, :show
+  
+  actions :index, :show, :tags
   respond_to :html, :xml
   
   caches_page :show
   caches_action :index
+  
+  def tags
+     @tag = Tag.find(params[:tag])
+     @galleries = Gallery.tagged_with(@tag.name)
+     render :template => '/tag'
+  end
   
   # set the initial the background image
   def index
@@ -27,7 +35,7 @@ class GalleriesController < HomeController
       return
     end
   end
-  
+
   private #-------
     # Defining the collection explicitly for ordering
     def collection

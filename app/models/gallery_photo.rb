@@ -3,12 +3,13 @@ class GalleryPhoto < ActiveRecord::Base
   acts_as_list :scope => :gallery_id
   
   has_attached_file :image,
-                    :styles => { :original => "", :thumb => "" },
+                    :styles => { :big => "", :original => "", :thumb => "" },
                     :path => ":rails_root/public/attachments/galleries/:gallery_id/gallery_photos/:id/:style/:basename.:extension",
                     :url => "/attachments/galleries/:gallery_id/gallery_photos/:id/:style/:basename.:extension",
                     :convert_options => {
                       :original => "-resize 660x440",
                       :thumb => "-gravity center -thumbnail 150x100^ -extent 150x100"
+
                     }
   
   validates_attachment_presence :image

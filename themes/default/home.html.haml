@@ -1,12 +1,15 @@
 :javascript
   $(document).ready(function() {
     $('#slides').cycle({
-  		timeout: 5000,
+  		timeout: 3000,
       speed: 3000
   	});
   });
-	
+
 #content
+  %div#tags
+    - for tag in @tags
+      = link_to(tag.name, tags_path({:tag => tag.id}))
   #slides
     - for gallery in @galleries
       %div
@@ -16,4 +19,4 @@
           = h(gallery.description)
 
 %p.clearfix
-  
+

@@ -74,13 +74,26 @@
   function stopSlideshow() {
     clearInterval ( intervalId );
   }
-  // just resets the interval so we're not moving too fast when the next / prev links are used.
-  function resetSlideshow() {
-    stopSlideshow();
-    startSlideshow();
+  });
+  $(document).ready(function () {
+  $('#slides').cycle({
+  timeout: 3000,
+  speed: 3000
+  });
+  style = 'easeOutQuart';
+  $('.photo').hover(
+  function() {
+  $(this).children('div:first').stop(false,true).animate({top:0},{duration:200, easing: style});
+  $(this).children('div:last').stop(false,true).animate({bottom:0},{duration:200, easing: style});
+  },
+  function() {
+  $(this).children('div:first').stop(false,true).animate({top:-50},{duration:200, easing: style});
+  $(this).children('div:last').stop(false,true).animate({bottom:-50},{duration:200, easing: style});
   }
-  
-  
+  );
+  });
+
+
 -content_for :subnav do
   %li{ :class => 'last', :style => 'padding-left: 0' } Выберите галерею: 
   - @galleries.each_with_index do |gallery, i|
