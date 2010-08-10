@@ -1,3 +1,4 @@
+= javascript_tag "BASE_PATH = '/admin/galleries/#{@gallery.id}/gallery_photos/'"
 :javascript
   $(document).ready(function() {
     $("#uploadify").uploadify({
@@ -13,6 +14,16 @@
   		'fileExt'        : '*.jpg;',
   		'buttonText'     : 'Add Photos',
   		'onComplete'     : load_photo,
+  		onError: function (a, b, c, d) {
+               if (d.status == 404)
+                  alert('Could not find upload script. Use a path relative to: '+'<?= getcwd() ?>');
+               else if (d.type === "HTTP")
+                  alert('error '+d.type+": "+d.status);
+               else if (d.type ==="File Size")
+                  alert(c.name+' '+d.type+' Limit: '+Math.round(d.sizeLimit/1024)+'KB');
+               else
+                  alert('error '+d.type+": "+d.text);
+      },
   		'scriptData'     : {
         'perishable_token' : '#{@config.perishable_token}'
       }
@@ -48,8 +59,6 @@
   #fileQueue
   %input{ :type => "file", :name => "uploadify", :id => "uploadify" }
   %br
-
 %p{ :class => 'clearfix' }
-
 %ul{ :id => 'position_container', :class => 'image_list' }
   = render :partial => "row", :collection => @gallery_photos

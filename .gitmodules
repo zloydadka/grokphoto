@@ -1,3 +1,0 @@
-[submodule "acts-as-taggable-on"]
-	path = vendor/plugins/acts-as-taggable-on
-	url = git://github.com/mbleigh/acts-as-taggable-on.git
