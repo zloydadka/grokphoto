@@ -5,9 +5,3 @@
   = "<br />#{link_to t(:blog), @config.blog_url}" unless @config.blog_url.blank?
   = "| #{link_to('Facebook', @config.facebook_url, :title => 'Facebook')}" unless @config.facebook_url.blank?
   = "| #{link_to('Twitter', @config.twitter_url, :title => 'Twitter')}" unless @config.twitter_url.blank?
-%h3 Отзывы клиентов
-- for quote in @quotes
-  %p
-    %i= "\"#{h(quote.body)}\""
-    %br
-    %b= h(quote.author)

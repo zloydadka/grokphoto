@@ -34,7 +34,14 @@
         thumb.fadeTo('fast',1).addClass('selected');
 
         // add a title for the clickable image
-        image.attr('title','Next image >>');
+        if(thumb[0].getAttribute('gallery_id')) {
+        image.attr('title','Перейти к альбому '+thumb[0].getAttribute('gallery_name'));
+        
+        } else {
+        image.attr('title','Следующая фотография >>');
+        
+        }
+        
       },
       onThumb : function(thumb) { // thumbnail effects goes here
 
@@ -111,5 +118,5 @@
       %ul.gallery_thumbs
         - @gallery.galleries.each_with_index do |g, i|
           %li{ :class => "#{'active' if i == 0}" }
-            = image_tag(g.image.url, :alt => h(g.title), :gallery_id => g.id)
+            = image_tag(g.image.url, :alt => h(g.title), :gallery_id => g.id, :gallery_name => g.title)
     %p.clearfix
