@@ -7,8 +7,8 @@
 /* COLORS */
 @background-color: #8c8c8c;
 @text-color: #fff;
-@link-color: #2C85B7;
-@hover-color: #FF9000;
+@link-color: #222;
+@hover-color: #ccc;
 @border-color: #fff;
 
 
@@ -39,7 +39,7 @@ a:hover {
 		text-decoration: none;
 	}
 	a:hover {
-		color: #e57011;
+		color: @hover-color;
 	}
 }
 #header h1 {
@@ -47,18 +47,20 @@ a:hover {
 	letter-spacing: -1px;
 	font-size: 1.7em;
 	padding: 15px 15px 17px 15px;
-	color: #fff;
+	color: #ccc;
 	background-color: #222;
-	a {
-		color: @link-color;
-	}
+	a { color: #ccc;}
 	a:hover {
-		color: #fff;
-		background-color: #e57011;
+		color: #222;
+		background-color: #ccc;
 	}
 }
 #header h1:hover {
-	background-color: #e57011;
+	background-color: #ccc;
+}
+#header h1:hover a{
+	color: #222;
+	background-color: #ccc;
 }
 #header ul {
 	margin: 15px 0 0 20px;
@@ -75,8 +77,9 @@ a:hover {
 		text-decoration: none;
 		color: @link-color;
 	}
+
 	a.active {
-		color: #e57011;
+		color: @hover-color;
 		border-bottom: 1px dotted @border-color;
 	}
 }
@@ -150,7 +153,7 @@ div.faux-hr {
 		color: #222;
 	}
 	a:hover {
-		color: #e57011;
+		color: @hover-color;
 	}
 } 
 #main {
@@ -220,7 +223,7 @@ label {
 		color: #222;
 	}
 	a:hover {
-		color: #e57011;
+		color: @hover-color;
 	}
 }
 
@@ -228,3 +231,7 @@ label {
 .css2 { font-size: 1.2em; }
 .css3 { font-size: 1.4em; }
 .css4 { font-size: 1.6em; }
+
+.galleria_wrapper {
+  text-align: center;
+}
